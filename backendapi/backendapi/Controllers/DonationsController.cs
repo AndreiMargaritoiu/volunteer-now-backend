@@ -11,17 +11,70 @@ namespace backendapi.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    public class DonationsController
+    public class DonationsController : ControllerBase
     {
-        private readonly DonationsService _donations;
+        private readonly DonationsService _donationsService;
 
         public DonationsController(DonationsService donationService)
         {
-            _donations = donationService;
+            _donationsService = donationService;
         }
 
         [HttpGet]
-        public ActionResult<List<Donations>> Get() => _donations.Get();
+        public ActionResult<List<Donations>> Get() => _donationsService.Get();
+
+
+        [HttpGet("{id:length(24)}", Name = "GetDonation")]
+        public ActionResult<Donations> Get(string id)
+        {
+            var donations = _donationsService.GetDonation(id);
+
+            if (donations == null)
+            {
+                return NotFound();
+            }
+
+            return donations;
+        }
+
+        [HttpPut("{id:length(24)}")]
+        public ActionResult<Donations> UpdateDonation(string id,[FromBody] Donations donations)
+        {
+
+            var DonationCheck = _donationsService.GetDonation(id);
+            if(DonationCheck == null)
+            {
+                return NotFound();
+            }
+               
+            _donationsService.UpdateDonation(id, donations);
+            return NoContent();
+        }
+
+
+
+        [HttpPost]
+        public ActionResult<Donations> Create(Donations donation)
+        {
+            _donationsService.CreateDonation(donation);
+
+            return CreatedAtRoute("GetDonation", new { id = donation.Id.ToString() }, donation);
+        }
+
+        [HttpDelete("{id:length(24)}")]
+        public ActionResult<Donations> DeleteDonation(string id){ 
+
+            var DonationCheck = _donationsService.GetDonation(id);
+            if (DonationCheck == null)
+            {
+                return NotFound();
+            }
+
+            _donationsService.DeleteDonation(id);
+            return NoContent();
+        }
+
+
 
     }
 }

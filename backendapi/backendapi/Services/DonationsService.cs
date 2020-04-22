@@ -22,5 +22,23 @@ namespace backendapi.Services
         public List<Donations> Get() =>
            _donations.Find(donation => true).ToList();
 
+        public Donations GetDonation(string id) =>
+            _donations.Find(donations => donations.Id == id).FirstOrDefault();
+
+        public void UpdateDonation(string id, Donations donationIn) =>
+            _donations.FindOneAndReplace(donation => donation.Id == id, donationIn);
+
+        public Donations CreateDonation(Donations donation)
+        {
+            _donations.InsertOne(donation);
+            return donation;
+        }
+
+        public void DeleteDonation(string id) =>
+            _donations.DeleteOne(donation => donation.Id == id);
+    
+         
+            
+
     }
 }

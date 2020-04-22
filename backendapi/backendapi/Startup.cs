@@ -41,6 +41,8 @@ namespace backendapi
             // ADD SERVICES 
             services.AddSingleton<BookService>();
             services.AddSingleton<DonationsService>();
+            services.AddSingleton<UserService>();
+
 
            
             services.AddCors(options => options.AddPolicy("AllowCors", builder =>

@@ -38,9 +38,10 @@ namespace backendapi
                 sp.GetRequiredService<IOptions<DatabaseSettings>>().Value);
 
 
-            // ADD SERVICES
+            // ADD SERVICES 
             services.AddSingleton<BookService>();
             services.AddSingleton<DonationsService>();
+
            
             services.AddCors(options => options.AddPolicy("AllowCors", builder =>
             {

@@ -31,19 +31,5 @@ namespace backendapi.Controllers
 
             return CreatedAtRoute("GetUser", new { id = user.Id.ToString() }, user);
         }
-
-        [HttpPut("{id:length(24)}")]
-      
-        public ActionResult<User> UpdateUser(string id, [FromBody] User userData)
-        {
-
-            if (_userService.Get() == null)
-            {
-                return NotFound();
-            }
-
-            _userService.UpdateUser(id, userData);
-            return NoContent();
-        }
     }
 }

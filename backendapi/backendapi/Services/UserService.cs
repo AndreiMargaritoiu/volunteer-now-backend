@@ -30,9 +30,5 @@ namespace backendapi.Services
             return user;
         }
 
-        public void UpdateUser(string id, User userData) =>
-               _users.FindOneAndReplace(userId => userData.Id == id, userData);
-
-
     }
 }

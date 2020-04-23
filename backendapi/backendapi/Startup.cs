@@ -42,6 +42,7 @@ namespace backendapi
             services.AddSingleton<BookService>();
             services.AddSingleton<DonationsService>();
             services.AddSingleton<UserService>();
+            services.AddSingleton<NeedService>();
 
 
            

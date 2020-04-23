@@ -15,10 +15,12 @@ namespace backendapi.Controllers
     {
 
         private readonly UserService _userService;
+        private readonly NeedService _needService;
 
-        public UsersController(UserService userService)
+        public UsersController(UserService userService, NeedService needService)
         {
             _userService = userService;
+            _needService = needService;
         }
 
         [HttpGet]
@@ -31,5 +33,34 @@ namespace backendapi.Controllers
 
             return CreatedAtRoute("GetUser", new { id = user.Id.ToString() }, user);
         }
+
+
+        
+        [HttpGet("{id:length(24)}", Name = "GetNeedsIds")]
+        public ActionResult<List<MongoDB.Bson.ObjectId>> Get(string id)
+        {
+            var ListsIds = _userService.GetUserNeedsIds(id);
+            
+            if (ListsIds == null)
+            {
+                return NotFound();
+            }
+          
+            ListsIds.ForEach(objid =>
+            {
+                System.Diagnostics.Debug.WriteLine(
+                    _needService.GetNeed(objid.ToString()).Title
+                    );
+
+                System.Diagnostics.Debug.WriteLine(
+                    _needService.GetNeed(objid.ToString()).Description
+                    );
+            });
+            return ListsIds;
+        }
+
+
+
+
     }
 }

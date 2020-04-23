@@ -28,7 +28,7 @@ namespace backendapi.Models
 
         public string Password { get; set; }
 
-        public ObjectId[] NeedsIds { get; set; }
+        public List<ObjectId> NeedsIds { get; set; }
 
     }
 }

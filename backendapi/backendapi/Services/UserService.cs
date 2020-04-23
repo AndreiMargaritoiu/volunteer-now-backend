@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using backendapi.Models;
 using MongoDB.Driver;
+using AutoMapper;
 
 namespace backendapi.Services
 {
@@ -11,6 +12,7 @@ namespace backendapi.Services
     {
 
         private readonly IMongoCollection<User> _users;
+      
 
         public UserService(IDatabaseSettings settings)
         {
@@ -24,11 +26,24 @@ namespace backendapi.Services
         public List<User> Get() =>
             _users.Find(user => true).ToList();
 
+
         public User Create(User user)
         {
+
+            user.NeedsIds = new List<MongoDB.Bson.ObjectId>();
             _users.InsertOne(user);
             return user;
         }
+
+
+
+        public List<MongoDB.Bson.ObjectId> GetUserNeedsIds(string id) => 
+            _users.Find(user => user.Id == id).FirstOrDefault().NeedsIds;
+
+
+
+        
+
 
     }
 }

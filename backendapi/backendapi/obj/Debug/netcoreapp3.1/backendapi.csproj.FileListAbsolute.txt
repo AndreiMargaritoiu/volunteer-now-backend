@@ -69,7 +69,6 @@ C:\Users\Luci\Desktop\Faculty\SemII\II\Proiect\TheRealProject\TheProject\II_2020
 C:\Users\Luci\Desktop\Faculty\SemII\II\Proiect\TheRealProject\TheProject\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
 C:\Users\Luci\Desktop\Faculty\SemII\II\Proiect\TheRealProject\TheProject\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\SharpCompress.dll
 C:\Users\Luci\Desktop\Faculty\SemII\II\Proiect\TheRealProject\TheProject\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.csprojAssemblyReference.cache
-C:\Users\Luci\Desktop\Faculty\SemII\II\Proiect\TheRealProject\TheProject\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Luci\Desktop\Faculty\SemII\II\Proiect\TheRealProject\TheProject\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.AssemblyInfoInputs.cache
 C:\Users\Luci\Desktop\Faculty\SemII\II\Proiect\TheRealProject\TheProject\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.AssemblyInfo.cs
 C:\Users\Luci\Desktop\Faculty\SemII\II\Proiect\TheRealProject\TheProject\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.RazorTargetAssemblyInfo.cache
@@ -118,3 +117,5 @@ C:\Users\Andrei\Desktop\VNBackend\II_2020_Backend\backendapi\backendapi\obj\Debu
 C:\Users\Andrei\Desktop\VNBackend\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.csproj.CopyComplete
 C:\Users\Andrei\Desktop\VNBackend\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.dll
 C:\Users\Andrei\Desktop\VNBackend\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.pdb
+C:\Users\Luci\Desktop\Faculty\SemII\II\Proiect\TheRealProject\TheProject\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Luci\Desktop\Faculty\SemII\II\Proiect\TheRealProject\TheProject\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.MvcApplicationPartsAssemblyInfo.cache

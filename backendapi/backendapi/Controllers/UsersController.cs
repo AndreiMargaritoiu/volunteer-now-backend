@@ -29,13 +29,30 @@ namespace backendapi.Controllers
         [HttpPost]
         public ActionResult<User> Create(User user)
         {
-            _userService.Create(user);
+            var userCheck = _userService.GetUserByEmail(user.Email);
 
+            if (userCheck != null )
+            {
+                return NotFound();
+            }
+            _userService.Create(user);
             return CreatedAtRoute("GetUser", new { id = user.Id.ToString() }, user);
+           
         }
 
+        [HttpGet("{id:length(24)}", Name = "GetUser")]
+        public ActionResult<User> GetUser(string id)
+        {
+            var user = _userService.GetUser(id);
 
-        
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return user;
+        }
+
         [HttpGet("{id:length(24)}", Name = "GetNeedsIds")]
         public ActionResult<List<MongoDB.Bson.ObjectId>> Get(string id)
         {

@@ -41,8 +41,13 @@ namespace backendapi.Services
             _users.Find(user => user.Id == id).FirstOrDefault().NeedsIds;
 
 
+        public User GetUser(string id) =>
+           _users.Find(user => user.Id == id).FirstOrDefault();
 
-        
+        public void UpdateUser(string id, User userIn) =>
+            _users.FindOneAndReplace(user => user.Id == id, userIn);
+
+
 
 
     }

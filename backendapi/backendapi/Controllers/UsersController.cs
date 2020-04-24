@@ -59,7 +59,32 @@ namespace backendapi.Controllers
             return ListsIds;
         }
 
+        [HttpGet("getUser/{id:length(24)}", Name = "GetUserData")]
+        public ActionResult<User> GetUser(string id)
+        {
+            var userData = _userService.GetUser(id);
 
+            if (userData == null)
+            {
+                return NotFound();
+            }
+          
+            return userData;
+        }
+
+        [HttpPut("updateUser/{id:length(24)}", Name = "UpdateUser")]
+        public ActionResult<User> UpdateUser(string id, [FromBody] User user)
+        {
+            
+            var UserCheck = _userService.GetUser(id);
+            if (UserCheck == null)
+            {
+                return NotFound();
+            }
+
+            _userService.UpdateUser(id, user);
+            return NoContent();
+        }
 
 
     }

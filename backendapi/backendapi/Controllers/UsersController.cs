@@ -82,26 +82,23 @@ namespace backendapi.Controllers
 
             var userCheck = _userService.GetUserByEmail(email);
 
-            if (userCheck != null)
+            if (userCheck == null)
             {
                 return NotFound();
             }
-            else
+            
+            var user = _userService.Login(email, password);
+
+            if (user == null)
             {
-                var user = _userService.Login(email, password);
 
-                if (user == null)
-                {
+                return NotFound();
 
-                    return NotFound();
-
-                }
-                else
-                    return "Cialut!";
+            }
+            return "Cialut!";
             }
             
         }
 
-
     }
-}
+

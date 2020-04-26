@@ -76,7 +76,31 @@ namespace backendapi.Controllers
             return ListsIds;
         }
 
+        [HttpGet("{email, password}", Name = "Login")]
+         public ActionResult<String> Login( [FromQuery] string email, [FromQuery] string password)
+            {
 
+            var userCheck = _userService.GetUserByEmail(email);
+
+            if (userCheck != null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                var user = _userService.Login(email, password);
+
+                if (user == null)
+                {
+
+                    return NotFound();
+
+                }
+                else
+                    return "Cialut!";
+            }
+            
+        }
 
 
     }

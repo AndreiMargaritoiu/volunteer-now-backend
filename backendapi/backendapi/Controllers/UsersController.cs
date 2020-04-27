@@ -26,7 +26,7 @@ namespace backendapi.Controllers
         [HttpGet]
         public ActionResult<List<User>> Get() => _userService.Get();
 
-        [HttpPost]
+        [HttpPost(Name = "SignUp")]
         public ActionResult<User> Create(User user)
         {
             var userCheck = _userService.GetUserByEmail(user.Email);
@@ -76,29 +76,31 @@ namespace backendapi.Controllers
             return ListsIds;
         }
 
-        [HttpGet("{email, password}", Name = "Login")]
-         public ActionResult<String> Login( [FromQuery] string email, [FromQuery] string password)
+        [HttpPost]
+        [Route("Login")]
+
+        public ActionResult<string> Login( User user )
             {
 
-            var userCheck = _userService.GetUserByEmail(email);
+            var userCheck = _userService.GetUserByEmail(user.Email);
 
             if (userCheck == null)
             {
-                return NotFound();
+                return "user not found";
             }
             
-            var user = _userService.Login(email, password);
+            var status = _userService.Login(user.Email, user.Password);
 
-            if (user == null)
+            if (status == null)
             {
 
-                return NotFound();
+                return "wrong password";
 
             }
-            return "Cialut!";
-            }
-            
+            return userCheck.Firstname + " " + userCheck.Lastname;
         }
+
+    }
 
     }
 

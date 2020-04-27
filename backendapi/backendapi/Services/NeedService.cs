@@ -26,5 +26,19 @@ namespace backendapi.Services
         public Need GetNeed(string id) =>
             _needs.Find(need => need.Id == id).FirstOrDefault();
 
+        public Need CreateNeed(Need need)
+        {
+            _needs.InsertOne(need);
+            return need;
+        }
+
+        public void DeleteNeed(string id)
+        {
+            _needs.DeleteOne(need => need.Id == id);
+        }
+
+        public void UpdateNeed(string id, Need needIn) =>
+            _needs.FindOneAndReplace(need => need.Id == id, needIn);
+
     }
 }

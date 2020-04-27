@@ -35,7 +35,12 @@ namespace backendapi.Services
             return user;
         }
 
+        public User GetUserByEmail(String email) =>
+            _users.Find(user => user.Email == email).FirstOrDefault();
 
+    
+        public User GetUser(string id) =>
+           _users.Find(user => user.Id == id).FirstOrDefault();
 
         public List<MongoDB.Bson.ObjectId> GetUserNeedsIds(string id) => 
             _users.Find(user => user.Id == id).FirstOrDefault().NeedsIds;
@@ -49,6 +54,8 @@ namespace backendapi.Services
 
 
 
+        public User Login(string email, string password) =>
+           _users.Find(user => user.Email == email && user.Password == password).FirstOrDefault();
 
     }
 }

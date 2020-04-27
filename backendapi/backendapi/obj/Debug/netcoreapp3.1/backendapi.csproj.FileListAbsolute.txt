@@ -119,3 +119,47 @@ C:\Users\Andrei\Desktop\VNBackend\II_2020_Backend\backendapi\backendapi\obj\Debu
 C:\Users\Andrei\Desktop\VNBackend\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.pdb
 C:\Users\Luci\Desktop\Faculty\SemII\II\Proiect\TheRealProject\TheProject\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\Luci\Desktop\Faculty\SemII\II\Proiect\TheRealProject\TheProject\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Andrei\Desktop\VNBackend\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\backendapi.exe
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\backendapi.deps.json
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\backendapi.runtimeconfig.json
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\backendapi.runtimeconfig.dev.json
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\backendapi.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\backendapi.pdb
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\DnsClient.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\SharpCompress.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.csprojAssemblyReference.cache
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.csproj.CoreCompileInputs.cache
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.AssemblyInfoInputs.cache
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.AssemblyInfo.cs
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.RazorTargetAssemblyInfo.cache
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.csproj.CopyComplete
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\staticwebassets\backendapi.StaticWebAssets.Manifest.cache
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\staticwebassets\backendapi.StaticWebAssets.xml
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.pdb
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.genruntimeconfig.cache

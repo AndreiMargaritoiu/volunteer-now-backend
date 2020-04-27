@@ -26,7 +26,8 @@ namespace backendapi.Controllers
         [HttpGet]
         public ActionResult<List<User>> Get() => _userService.Get();
 
-        [HttpPost(Name = "SignUp")]
+        [HttpPost]
+        [Route("Register")]
         public ActionResult<User> Create(User user)
         {
             var userCheck = _userService.GetUserByEmail(user.Email);

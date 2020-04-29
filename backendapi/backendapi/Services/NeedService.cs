@@ -21,7 +21,7 @@ namespace backendapi.Services
         }
 
         public List<Need> Get() =>
-          _needs.Find(donation => true).ToList();
+          _needs.Find(need => true).ToList();
 
         public Need GetNeed(string id) =>
             _needs.Find(need => need.Id == id).FirstOrDefault();

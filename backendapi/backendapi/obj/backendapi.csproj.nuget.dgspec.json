@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andrei\\Desktop\\VNBackend\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj": {}
+    "F:\\faculta\\ANIII\\Valean\\GitHubProj\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andrei\\Desktop\\VNBackend\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj": {
+    "F:\\faculta\\ANIII\\Valean\\GitHubProj\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andrei\\Desktop\\VNBackend\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj",
+        "projectUniqueName": "F:\\faculta\\ANIII\\Valean\\GitHubProj\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj",
         "projectName": "backendapi",
-        "projectPath": "C:\\Users\\Andrei\\Desktop\\VNBackend\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj",
-        "packagesPath": "C:\\Users\\Andrei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andrei\\Desktop\\VNBackend\\II_2020_Backend\\backendapi\\backendapi\\obj\\",
+        "projectPath": "F:\\faculta\\ANIII\\Valean\\GitHubProj\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj",
+        "packagesPath": "C:\\Users\\mihai\\.nuget\\packages\\",
+        "outputPath": "F:\\faculta\\ANIII\\Valean\\GitHubProj\\II_2020_Backend\\backendapi\\backendapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Andrei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mihai\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

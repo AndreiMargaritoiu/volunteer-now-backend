@@ -163,3 +163,44 @@ C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debu
 C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.dll
 C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.pdb
 C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.genruntimeconfig.cache
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\appsettings.Development.json
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\appsettings.json
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\backendapi.exe
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\backendapi.deps.json
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\backendapi.runtimeconfig.json
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\backendapi.runtimeconfig.dev.json
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\backendapi.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\backendapi.pdb
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\AutoMapper.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\DnsClient.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\SharpCompress.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.csprojAssemblyReference.cache
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\staticwebassets\backendapi.StaticWebAssets.Manifest.cache
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\staticwebassets\backendapi.StaticWebAssets.xml
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.MvcApplicationPartsAssemblyInfo.cache
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.AssemblyInfoInputs.cache
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.AssemblyInfo.cs
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.RazorTargetAssemblyInfo.cache
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.csproj.CopyComplete
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.dll
+F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.pdb

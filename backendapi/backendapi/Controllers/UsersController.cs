@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using backendapi.Models;
 using backendapi.Services;
+using backendapi.DTO;
 
 namespace backendapi.Controllers
 {
@@ -41,17 +42,29 @@ namespace backendapi.Controllers
            
         }
 
-        [HttpGet("{id:length(24)}", Name = "GetUser")]
-        public ActionResult<User> GetUser(string id)
+        [HttpGet("getUser/{id:length(24)}", Name = "GetUser")]
+        public ActionResult<EditUserDTO> GetUser(string id)
         {
             var user = _userService.GetUser(id);
 
+            EditUserDTO UserDTO;
             if (user == null)
             {
                 return NotFound();
+            }else
+            {
+                UserDTO = new EditUserDTO
+                {
+                    Lastname = user.Lastname,
+                    Firstname = user.Firstname,
+                    Email = user.Email,
+                    Telephone = user.Telephone,
+                    Address = user.Address,
+
+                };
             }
 
-            return user;
+            return UserDTO;
         }
 
         [HttpGet("{id:length(24)}", Name = "GetNeedsIds")]
@@ -77,37 +90,17 @@ namespace backendapi.Controllers
             return ListsIds;
         }
 
-        [HttpGet("getUser/{id:length(24)}", Name = "GetUserData")]
-        public ActionResult<User> GetUser(string id)
-        {
-            var userData = _userService.GetUser(id);
-
-            if (userData == null)
-            {
-                return NotFound();
-            }
-          
-            return userData;
-        }
-
         [HttpPut("updateUser/{id:length(24)}", Name = "UpdateUser")]
         public ActionResult<User> UpdateUser(string id, [FromBody] User user)
         {
             
             var UserCheck = _userService.GetUser(id);
-            if (UserCheck == null)
-            {
-                return NotFound();
-            }
 
-            _userService.UpdateUser(id, user);
-            return NoContent();
-        }
-         [HttpPut("updateUser/{id:length(24)}", Name = "UpdateUser")]
-        public ActionResult<User> UpdateUser(string id, [FromBody] User user)
-        {
-            
-            var UserCheck = _userService.GetUser(id);
+            user.Id = id;
+            user.Password = UserCheck.Password;
+            user.Type = UserCheck.Type;
+            user.NeedsIds = UserCheck.NeedsIds;
+                 
             if (UserCheck == null)
             {
                 return NotFound();

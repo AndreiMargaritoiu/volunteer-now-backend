@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using backendapi.Models;
 using MongoDB.Driver;
 using AutoMapper;
+using backendapi.DTO;
 
 namespace backendapi.Services
 {
@@ -45,14 +46,8 @@ namespace backendapi.Services
         public List<MongoDB.Bson.ObjectId> GetUserNeedsIds(string id) => 
             _users.Find(user => user.Id == id).FirstOrDefault().NeedsIds;
 
-
-        public User GetUser(string id) =>
-           _users.Find(user => user.Id == id).FirstOrDefault();
-
         public void UpdateUser(string id, User userIn) =>
             _users.FindOneAndReplace(user => user.Id == id, userIn);
-
-
 
         public User Login(string email, string password) =>
            _users.Find(user => user.Email == email && user.Password == password).FirstOrDefault();

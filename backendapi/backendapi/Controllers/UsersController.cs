@@ -103,6 +103,19 @@ namespace backendapi.Controllers
             _userService.UpdateUser(id, user);
             return NoContent();
         }
+         [HttpPut("updateUser/{id:length(24)}", Name = "UpdateUser")]
+        public ActionResult<User> UpdateUser(string id, [FromBody] User user)
+        {
+            
+            var UserCheck = _userService.GetUser(id);
+            if (UserCheck == null)
+            {
+                return NotFound();
+            }
+
+            _userService.UpdateUser(id, user);
+            return NoContent();
+        }
 
         [HttpPost]
         [Route("Login")]

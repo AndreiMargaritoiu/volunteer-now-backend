@@ -6,6 +6,8 @@ using backendapi.Models;
 using MongoDB.Driver;
 using AutoMapper;
 using backendapi.DTO;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace backendapi.Services
 {
@@ -51,6 +53,9 @@ namespace backendapi.Services
 
         public User Login(string email, string password) =>
            _users.Find(user => user.Email == email && user.Password == password).FirstOrDefault();
+
+        public static string SerialGenerator(Object objectToSerialize) =>
+            Convert.ToBase64String(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(objectToSerialize)));
 
     }
 }

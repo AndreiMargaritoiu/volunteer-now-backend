@@ -152,8 +152,6 @@ C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debu
 C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
 C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\SharpCompress.dll
 C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.csprojAssemblyReference.cache
-C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.csproj.CoreCompileInputs.cache
-C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.AssemblyInfoInputs.cache
 C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.AssemblyInfo.cs
 C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.RazorTargetAssemblyInfo.cache
@@ -204,3 +202,7 @@ F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\obj\Deb
 F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.csproj.CopyComplete
 F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.dll
 F:\faculta\ANIII\Valean\GitHubProj\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.pdb
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.csproj.CoreCompileInputs.cache
+C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.MvcApplicationPartsAssemblyInfo.cache

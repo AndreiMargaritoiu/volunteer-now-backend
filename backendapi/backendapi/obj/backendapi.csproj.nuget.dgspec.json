@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\faculta\\ANIII\\Valean\\GitHubProj\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj": {}
+    "C:\\Users\\balta\\Desktop\\Proiect II\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj": {}
   },
   "projects": {
-    "F:\\faculta\\ANIII\\Valean\\GitHubProj\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj": {
+    "C:\\Users\\balta\\Desktop\\Proiect II\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\faculta\\ANIII\\Valean\\GitHubProj\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj",
+        "projectUniqueName": "C:\\Users\\balta\\Desktop\\Proiect II\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj",
         "projectName": "backendapi",
-        "projectPath": "F:\\faculta\\ANIII\\Valean\\GitHubProj\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj",
-        "packagesPath": "C:\\Users\\mihai\\.nuget\\packages\\",
-        "outputPath": "F:\\faculta\\ANIII\\Valean\\GitHubProj\\II_2020_Backend\\backendapi\\backendapi\\obj\\",
+        "projectPath": "C:\\Users\\balta\\Desktop\\Proiect II\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj",
+        "packagesPath": "C:\\Users\\balta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\balta\\Desktop\\Proiect II\\II_2020_Backend\\backendapi\\backendapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mihai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\balta\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -52,7 +52,15 @@
             },
             "MongoDB.Driver": {
               "target": "Package",
-              "version": "[2.10.2, )"
+              "version": "[2.10.3, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Newtonsoft.Json.Bson": {
+              "target": "Package",
+              "version": "[1.0.2, )"
             }
           },
           "imports": [
@@ -73,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

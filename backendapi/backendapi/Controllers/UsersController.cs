@@ -7,6 +7,7 @@ using backendapi.Models;
 using backendapi.Services;
 using backendapi.DTO;
 
+
 namespace backendapi.Controllers
 {
 
@@ -118,9 +119,20 @@ namespace backendapi.Controllers
 
             var userCheck = _userService.GetUserByEmail(user.Email);
 
+            LoginUserDTO loginUserDTO;
+
             if (userCheck == null)
             {
-                return "user not found";
+
+                 loginUserDTO = new LoginUserDTO
+                {
+                    Lastname = "",
+                    Firstname = "",
+                    Error = "user not found"
+
+                };
+
+                return UserService.SerialGenerator(loginUserDTO);
             }
 
             var status = _userService.Login(user.Email, user.Password);
@@ -128,10 +140,30 @@ namespace backendapi.Controllers
             if (status == null)
             {
 
-                return "wrong password";
+                 loginUserDTO = new LoginUserDTO
+                {
+                    Lastname = "",
+                    Firstname = "",
+                    Error = "wrong password"
 
+                };
+
+                return UserService.SerialGenerator(loginUserDTO);
             }
-            return userCheck.Firstname + " " + userCheck.Lastname;
+
+            else
+            {
+                 loginUserDTO = new LoginUserDTO
+                {
+                    Lastname = userCheck.Lastname,
+                    Firstname = userCheck.Firstname,
+                    Error = ""
+
+                };
+
+                return UserService.SerialGenerator(loginUserDTO);
+            }
+
         }
 
     }

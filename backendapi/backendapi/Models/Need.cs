@@ -19,7 +19,9 @@ namespace backendapi.Models
 
         public string Description { get; set; }
 
-       
+        public string Date { get; set; }
+
+     
 
     }
 }

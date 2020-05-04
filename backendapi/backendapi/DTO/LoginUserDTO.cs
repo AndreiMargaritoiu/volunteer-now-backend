@@ -13,5 +13,6 @@ namespace backendapi.DTO
         public string Firstname { get; set; }
 
         public string Error { get; set; }
+
     }
 }

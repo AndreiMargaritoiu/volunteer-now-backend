@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using backendapi.Models;
 using backendapi.Services;
+using backendapi.DTO;
+using MongoDB.Bson;
 
 namespace backendapi.Controllers
 {
@@ -54,12 +56,20 @@ namespace backendapi.Controllers
 
 
 
-        [HttpPost]
-        public ActionResult<Need> Create(Need need)
+        [HttpPost("{id:length(24)}")]
+        public ActionResult<Need> Create(string id, [FromBody] NeedCreateDTO NeedDTO)
         {
-            _needsService.CreateNeed(need);
 
-            return CreatedAtRoute("GetNeed", new { id = need.Id.ToString() }, need);
+            Need NeedCreated = new Need
+            {
+                Title = NeedDTO.Title,
+                Description = NeedDTO.Description,
+                UserId = ObjectId.Parse(id),
+                Date = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss")
+            };
+
+            _needsService.CreateNeed(NeedCreated);
+            return CreatedAtRoute("GetNeed", new { id = NeedCreated.Id.ToString() }, NeedCreated);
         }
 
         [HttpDelete("{id:length(24)}")]

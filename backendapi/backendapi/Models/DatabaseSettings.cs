@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+﻿
 namespace backendapi.Models
 {
     public class DatabaseSettings : IDatabaseSettings
     {
-        public string BooksCollectionName { get; set; }
         public string ConnectionString { get; set; }
         public string DatabaseName { get; set; }
         public string UserCollectionName { get; set; }
@@ -17,7 +12,6 @@ namespace backendapi.Models
 
     public interface IDatabaseSettings
     {
-        string BooksCollectionName { get; set; }
 
         string UserCollectionName { get; set; }
 

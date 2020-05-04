@@ -26,21 +26,20 @@ namespace backendapi
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
 
             services.Configure<DatabaseSettings>(Configuration.GetSection(nameof(DatabaseSettings)));
                
 
-            //ADD DATABASE
             services.AddSingleton<IDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<DatabaseSettings>>().Value);
 
 
-            // ADD SERVICES 
-            services.AddSingleton<BookService>();
             services.AddSingleton<DonationsService>();
+            services.AddSingleton<UserService>();
+            services.AddSingleton<NeedService>();
+
 
            
             services.AddCors(options => options.AddPolicy("AllowCors", builder =>
@@ -52,7 +51,6 @@ namespace backendapi
             services.AddControllers();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

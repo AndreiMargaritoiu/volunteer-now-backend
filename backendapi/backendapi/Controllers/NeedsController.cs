@@ -16,10 +16,12 @@ namespace backendapi.Controllers
     public class NeedsController : ControllerBase
     {
         private readonly NeedService _needsService;
+        private readonly UserService _userService;
 
-        public NeedsController(NeedService needService)
+        public NeedsController(NeedService needService, UserService userService)
         {
             _needsService = needService;
+            _userService = userService;
         }
 
         [HttpGet]
@@ -42,7 +44,8 @@ namespace backendapi.Controllers
                 needDTO = new EditNeedDTO
                 {
                     Title = need.Title,
-                    Description = need.Description
+                    Description = need.Description,
+                    Date = need.Date
                 };
             }
 
@@ -102,5 +105,35 @@ namespace backendapi.Controllers
             _needsService.DeleteNeed(id);
             return NoContent();
         }
+
+        [HttpGet("get/assigned/{id:length(24)}", Name = "GetAssignedNeeds")]
+        public ActionResult<List<EditNeedDTO>> GetAssignedNeeds(string id)
+        {
+            var user = _userService.GetUser(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            List<EditNeedDTO> ListOfAssigned = new List<EditNeedDTO>();
+            user.NeedsIds.ForEach(id =>
+            {
+                var need = _needsService.GetNeed(id.ToString());
+                EditNeedDTO NeedDTO = new EditNeedDTO
+                {
+                    Description = need.Description,
+                    Date = need.Date,
+                    Title = need.Title
+               
+
+
+                };
+                ListOfAssigned.Add(NeedDTO);
+            }
+            );
+
+            return ListOfAssigned;
+        }
+
     }
 }

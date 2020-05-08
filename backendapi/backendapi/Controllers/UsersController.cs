@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using backendapi.Models;
 using backendapi.Services;
 using backendapi.DTO;
+using MongoDB.Bson;
 
 
 namespace backendapi.Controllers
@@ -121,6 +122,36 @@ namespace backendapi.Controllers
             _userService.UpdateUser(id, user);
             return NoContent();
         }
+
+        [HttpPut("assign/{uid:length(24)}/{nid:length(24)}", Name = "AssignUserNeed")]
+        public ActionResult<User> AssignUserNeed(string uid, [FromRouteAttribute] string nid)
+        {        
+            var UserCheck = _userService.GetUser(uid);
+            if (UserCheck == null)
+            {
+                return NotFound();
+            }
+            ObjectId nidy = new ObjectId(nid);
+
+            List<Need> ListOfAssigned = new List<Need>();
+            UserCheck.NeedsIds.ForEach(uid =>
+            {
+                var need = _needService.GetNeed(uid.ToString());
+                ListOfAssigned.Add(need);
+            }
+            );
+            foreach (Need need in ListOfAssigned)
+            {
+                if (need.Id == nid)
+                {
+                    return NoContent();
+                }
+            }
+            
+            UserCheck.NeedsIds.Add(nidy);
+            _userService.AssignUserNeed(uid, nidy, UserCheck);
+            return NoContent();
+        } 
 
         [HttpPost]
         [Route("Login")]

@@ -208,3 +208,5 @@ C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debu
 C:\Users\balta\Desktop\Proiect II\II_2020_Backend\backendapi\backendapi\obj\Debug\netcoreapp3.1\backendapi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Luci\Desktop\Faculty\SemII\II\Proiect\TheRealProject\TheProject\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Luci\Desktop\Faculty\SemII\II\Proiect\TheRealProject\TheProject\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Andrei\Desktop\VNBackend\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Andrei\Desktop\VNBackend\II_2020_Backend\backendapi\backendapi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

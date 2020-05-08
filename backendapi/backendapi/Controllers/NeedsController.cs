@@ -26,18 +26,35 @@ namespace backendapi.Controllers
         public ActionResult<List<Need>> Get() => _needsService.Get();
 
 
-        [HttpGet("{id:length(24)}", Name = "GetNeed")]
-        public ActionResult<Need> Get(string id)
+
+        [HttpGet("getNeed/{id:length(24)}", Name = "GetNeed")]
+        public ActionResult<EditNeedDTO> GetNeed(string id)
         {
             var need = _needsService.GetNeed(id);
 
+            EditNeedDTO needDTO;
             if (need == null)
             {
                 return NotFound();
             }
+            else
+            {
+                needDTO = new EditNeedDTO
+                {
+                    Title = need.Title,
+                    Description = need.Description
+                };
+            }
 
-            return need;
+            return needDTO;
         }
+
+        [HttpGet("{id:length(24)}", Name = "GetNeeds")]
+        public ActionResult<List<Need>> GetNeeds(string id)
+        {
+            return _needsService.GetNeedsByUser(id);
+        }
+
 
 
         [HttpPut("{id:length(24)}")]

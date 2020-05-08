@@ -32,6 +32,13 @@ namespace backendapi.Services
             return need;
         }
 
+        public List<Need> GetNeedsByUser(string id)
+        {
+            MongoDB.Bson.ObjectId needsIds = new MongoDB.Bson.ObjectId(id);
+            return _needs.Find(need => need.UserId == needsIds).ToList();
+        }
+
+
         public void DeleteNeed(string id)
         {
             _needs.DeleteOne(need => need.Id == id);

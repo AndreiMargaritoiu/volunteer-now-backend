@@ -30,17 +30,27 @@ namespace backendapi.Controllers
 
         [HttpPost]
         [Route("Register")]
-        public ActionResult<User> Create(User user)
+        public ActionResult<string> Create(User user)
         {
             var userCheck = _userService.GetUserByEmail(user.Email);
 
-            if (userCheck != null )
+            if (userCheck != null)
             {
                 return NotFound();
             }
             _userService.Create(user);
-            return CreatedAtRoute("GetUser", new { id = user.Id.ToString() }, user);
-           
+            CreatedAtRoute("GetUser", new { id = user.Id.ToString() }, user);
+
+            LoginUserDTO loginUserDTO = new LoginUserDTO
+            {
+                Id = user.Id,
+                Type = user.Type,
+                Error = ""
+
+            };
+
+            return UserService.SerialGenerator(loginUserDTO);
+
         }
 
         [HttpGet("getUser/{id:length(24)}", Name = "GetUser")]
@@ -52,7 +62,8 @@ namespace backendapi.Controllers
             if (user == null)
             {
                 return NotFound();
-            }else
+            }
+            else
             {
                 UserDTO = new EditUserDTO
                 {
@@ -124,10 +135,10 @@ namespace backendapi.Controllers
             if (userCheck == null)
             {
 
-                 loginUserDTO = new LoginUserDTO
+                loginUserDTO = new LoginUserDTO
                 {
-                    Lastname = "",
-                    Firstname = "",
+                    Id = "",
+                    Type = "",
                     Error = "user not found"
 
                 };
@@ -140,10 +151,10 @@ namespace backendapi.Controllers
             if (status == null)
             {
 
-                 loginUserDTO = new LoginUserDTO
+                loginUserDTO = new LoginUserDTO
                 {
-                    Lastname = "",
-                    Firstname = "",
+                    Id = "",
+                    Type = "",
                     Error = "wrong password"
 
                 };
@@ -153,10 +164,10 @@ namespace backendapi.Controllers
 
             else
             {
-                 loginUserDTO = new LoginUserDTO
+                loginUserDTO = new LoginUserDTO
                 {
-                    Lastname = userCheck.Lastname,
-                    Firstname = userCheck.Firstname,
+                    Id = userCheck.Id,
+                    Type = userCheck.Type,
                     Error = ""
 
                 };

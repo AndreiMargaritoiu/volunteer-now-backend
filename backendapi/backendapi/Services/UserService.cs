@@ -8,6 +8,7 @@ using AutoMapper;
 using backendapi.DTO;
 using Newtonsoft.Json;
 using System.Text;
+using MongoDB.Bson;
 
 namespace backendapi.Services
 {
@@ -49,6 +50,9 @@ namespace backendapi.Services
             _users.Find(user => user.Id == id).FirstOrDefault().NeedsIds;
 
         public void UpdateUser(string id, User userIn) =>
+            _users.FindOneAndReplace(user => user.Id == id, userIn);
+
+        public void AssignUserNeed(string id, ObjectId nid, User userIn) =>
             _users.FindOneAndReplace(user => user.Id == id, userIn);
 
         public User Login(string email, string password) =>

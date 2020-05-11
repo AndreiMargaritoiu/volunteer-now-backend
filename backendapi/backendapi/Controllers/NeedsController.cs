@@ -124,9 +124,6 @@ namespace backendapi.Controllers
                     Description = need.Description,
                     Date = need.Date,
                     Title = need.Title
-               
-
-
                 };
                 ListOfAssigned.Add(NeedDTO);
             }

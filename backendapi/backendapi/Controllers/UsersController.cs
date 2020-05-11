@@ -105,14 +105,14 @@ namespace backendapi.Controllers
         [HttpPut("updateUser/{id:length(24)}", Name = "UpdateUser")]
         public ActionResult<User> UpdateUser(string id, [FromBody] User user)
         {
-            
+            Console.WriteLine("Am ajuns aici");
             var UserCheck = _userService.GetUser(id);
 
             user.Id = id;
             user.Password = UserCheck.Password;
             user.Type = UserCheck.Type;
             user.NeedsIds = UserCheck.NeedsIds;
-                 
+            Console.WriteLine(id + " " + user.Lastname + "aaa");     
             if (UserCheck == null)
             {
                 return NotFound();

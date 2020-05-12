@@ -90,34 +90,25 @@ namespace backendapi.Controllers
                 return NotFound();
             }
           
-            ListsIds.ForEach(objid =>
-            {
-                System.Diagnostics.Debug.WriteLine(
-                    _needService.GetNeed(objid.ToString()).Title
-                    );
-
-                System.Diagnostics.Debug.WriteLine(
-                    _needService.GetNeed(objid.ToString()).Description
-                    );
-            });
+      
             return ListsIds;
         }
 
         [HttpPut("updateUser/{id:length(24)}", Name = "UpdateUser")]
         public ActionResult<User> UpdateUser(string id, [FromBody] User user)
         {
-            Console.WriteLine("Am ajuns aici");
             var UserCheck = _userService.GetUser(id);
+
+            if (UserCheck == null)
+            {
+                return NotFound();
+            }
 
             user.Id = id;
             user.Password = UserCheck.Password;
             user.Type = UserCheck.Type;
             user.NeedsIds = UserCheck.NeedsIds;
-            Console.WriteLine(id + " " + user.Lastname + "aaa");     
-            if (UserCheck == null)
-            {
-                return NotFound();
-            }
+         
 
             _userService.UpdateUser(id, user);
             return NoContent();
@@ -147,8 +138,16 @@ namespace backendapi.Controllers
                     return NoContent();
                 }
             }
-            
+
+            var NeedGet = _needService.GetNeed(nid);
+            NeedGet.State = Utils.Utils.NEED_STATE_ASSIGNED;
+            if(NeedGet == null)
+            {
+                return NotFound();
+            }
+       
             UserCheck.NeedsIds.Add(nidy);
+            _needService.UpdateNeed(nid, NeedGet);
             _userService.AssignUserNeed(uid, nidy, UserCheck);
             return NoContent();
         } 

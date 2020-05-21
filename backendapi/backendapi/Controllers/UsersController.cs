@@ -116,7 +116,7 @@ namespace backendapi.Controllers
 
         [HttpPut("assign/{uid:length(24)}/{nid:length(24)}", Name = "AssignUserNeed")]
         public ActionResult<User> AssignUserNeed(string uid, [FromRouteAttribute] string nid)
-        {        
+        {
             var UserCheck = _userService.GetUser(uid);
             if (UserCheck == null)
             {
@@ -131,26 +131,57 @@ namespace backendapi.Controllers
                 ListOfAssigned.Add(need);
             }
             );
-            foreach (Need need in ListOfAssigned)
-            {
-                if (need.Id == nid)
-                {
-                    return NoContent();
-                }
-            }
 
             var NeedGet = _needService.GetNeed(nid);
             NeedGet.State = Utils.Utils.NEED_STATE_ASSIGNED;
-            if(NeedGet == null)
+            if (NeedGet == null)
             {
                 return NotFound();
             }
-       
+
             UserCheck.NeedsIds.Add(nidy);
             _needService.UpdateNeed(nid, NeedGet);
             _userService.AssignUserNeed(uid, nidy, UserCheck);
             return NoContent();
-        } 
+        }
+
+        [HttpPut("unassign/{uid:length(24)}/{nid:length(24)}", Name = "UnassignUserNeed")]
+        public ActionResult<User> UnassignUserNeed(string uid, [FromRouteAttribute] string nid)
+        {
+            var UserCheck = _userService.GetUser(uid);
+            if (UserCheck == null)
+            {
+                return NotFound();
+            }
+            ObjectId nidy = new ObjectId(nid);
+
+            var NeedGet = _needService.GetNeed(nid);
+            NeedGet.State = Utils.Utils.NEED_STATE_UNASSIGNED;
+            if (NeedGet == null)
+            {
+                return NotFound();
+            }
+
+            UserCheck.NeedsIds.Remove(nidy);
+            _needService.UpdateNeed(nid, NeedGet);
+            _userService.AssignUserNeed(uid, nidy, UserCheck);
+            return NoContent();
+        }
+
+        [HttpPut("done/{uid:length(24)}/{nid:length(24)}", Name = "DoneUserNeed")]
+        public ActionResult<User> DoneUserNeed(string uid, [FromRouteAttribute] string nid)
+        {
+          
+            var NeedGet = _needService.GetNeed(nid);
+            NeedGet.State = Utils.Utils.NEED_STATE_DONE;
+            if (NeedGet == null)
+            {
+                return NotFound();
+            }
+
+            _needService.UpdateNeed(nid, NeedGet);
+            return NoContent();
+        }
 
         [HttpPost]
         [Route("Login")]

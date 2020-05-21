@@ -43,7 +43,7 @@ namespace backendapi.Controllers
 
             _needsService.Get().ForEach(need =>
              {
-                 if (!(AssignedNeedsSet.Contains(new ObjectId(need.Id))))
+                 if (!AssignedNeedsSet.Contains(new ObjectId(need.Id)) && need.State == Utils.Utils.NEED_STATE_UNASSIGNED)
                  {
                      EditNeedDTO EDT = new EditNeedDTO()
                      {
@@ -167,7 +167,7 @@ namespace backendapi.Controllers
             user.NeedsIds.ForEach(id =>
             {
                 var need = _needsService.GetNeed(id.ToString());
-                if (need != null && need.State == "Assigned")
+                if (need != null && need.State == Utils.Utils.NEED_STATE_ASSIGNED)
                 {
                     EditNeedDTO NeedDTO = new EditNeedDTO
                     {
@@ -204,7 +204,7 @@ namespace backendapi.Controllers
             user.NeedsIds.ForEach(id =>
             {
                 var need = _needsService.GetNeed(id.ToString());
-                if (need != null && need.State == "Done")
+                if (need != null && need.State == Utils.Utils.NEED_STATE_DONE)
                 {
                     EditNeedDTO NeedDTO = new EditNeedDTO
                     {

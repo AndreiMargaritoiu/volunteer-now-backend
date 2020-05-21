@@ -167,7 +167,7 @@ namespace backendapi.Controllers
             user.NeedsIds.ForEach(id =>
             {
                 var need = _needsService.GetNeed(id.ToString());
-                if (need != null)
+                if (need != null && need.State == "Assigned")
                 {
                     EditNeedDTO NeedDTO = new EditNeedDTO
                     {

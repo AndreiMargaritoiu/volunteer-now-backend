@@ -109,7 +109,10 @@ namespace backendapi.Controllers
             {
                 return NotFound();
             }
-
+            need.Id = id;
+            need.UserId = NeedCheck.UserId;
+            need.Date = NeedCheck.Date;
+            need.State = NeedCheck.State;
             _needsService.UpdateNeed(id, need);
             return NoContent();
         }

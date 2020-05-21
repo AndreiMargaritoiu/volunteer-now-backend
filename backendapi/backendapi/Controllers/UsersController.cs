@@ -131,13 +131,6 @@ namespace backendapi.Controllers
                 ListOfAssigned.Add(need);
             }
             );
-            foreach (Need need in ListOfAssigned)
-            {
-                if (need.Id == nid)
-                {
-                    return NoContent();
-                }
-            }
 
             var NeedGet = _needService.GetNeed(nid);
             NeedGet.State = Utils.Utils.NEED_STATE_ASSIGNED;
@@ -150,7 +143,30 @@ namespace backendapi.Controllers
             _needService.UpdateNeed(nid, NeedGet);
             _userService.AssignUserNeed(uid, nidy, UserCheck);
             return NoContent();
-        } 
+        }
+
+        [HttpPut("unassign/{uid:length(24)}/{nid:length(24)}", Name = "UnassignUserNeed")]
+        public ActionResult<User> UnassignUserNeed(string uid, [FromRouteAttribute] string nid)
+        {
+            var UserCheck = _userService.GetUser(uid);
+            if (UserCheck == null)
+            {
+                return NotFound();
+            }
+            ObjectId nidy = new ObjectId(nid);
+
+            var NeedGet = _needService.GetNeed(nid);
+            NeedGet.State = Utils.Utils.NEED_STATE_UNASSIGNED;
+            if (NeedGet == null)
+            {
+                return NotFound();
+            }
+            
+            UserCheck.NeedsIds.Remove(nidy);
+            _needService.UpdateNeed(nid, NeedGet);
+            _userService.AssignUserNeed(uid, nidy, UserCheck);
+            return NoContent();
+        }
 
         [HttpPost]
         [Route("Login")]

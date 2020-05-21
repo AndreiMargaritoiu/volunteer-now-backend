@@ -98,7 +98,12 @@ namespace backendapi.Controllers
             return _needsService.GetNeedsByUser(id);
         }
 
+        [HttpGet("getDone/{id:length(24)}", Name = "GetDoneNeeds")]
+        public ActionResult<List<Need>> GetDoneNeeds(string id)
+        {
 
+            return _needsService.GetDoneNeedsByUser(id);
+        }
 
         [HttpPut("{id:length(24)}")]
         public ActionResult<Need> UpdateNeed(string id, [FromBody] Need need)
@@ -181,6 +186,43 @@ namespace backendapi.Controllers
             );
 
             return ListOfAssigned;
+        }
+
+
+        [HttpGet("get/done/{id:length(24)}", Name = "GetDoneVolunteerNeeds")]
+        public ActionResult<List<EditNeedDTO>> GetDoneVolunteerNeeds(string id)
+        {
+            var user = _userService.GetUser(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            List<EditNeedDTO> ListOfDone = new List<EditNeedDTO>();
+            System.Diagnostics.Debug.WriteLine(user.NeedsIds.Count);
+
+            user.NeedsIds.ForEach(id =>
+            {
+                var need = _needsService.GetNeed(id.ToString());
+                if (need != null && need.State == "Done")
+                {
+                    EditNeedDTO NeedDTO = new EditNeedDTO
+                    {
+                        Description = need.Description,
+                        Date = need.Date,
+                        Title = need.Title,
+                        State = need.State,
+                        City = user.Address,
+                        Id = need.Id
+
+                    };
+                    ListOfDone.Add(NeedDTO);
+                }
+
+            }
+            );
+
+            return ListOfDone;
         }
 
     }

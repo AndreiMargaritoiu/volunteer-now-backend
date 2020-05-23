@@ -46,7 +46,6 @@ namespace backendapi.Controllers
             {
                 Id = user.Id,
                 Type = user.Type,
-                Error = ""
 
             };
 
@@ -189,47 +188,20 @@ namespace backendapi.Controllers
         public ActionResult<string> Login(User user)
         {
 
-            var userCheck = _userService.GetUserByEmail(user.Email);
-
-            LoginUserDTO loginUserDTO;
-
-            if (userCheck == null)
-            {
-
-                loginUserDTO = new LoginUserDTO
-                {
-                    Id = "",
-                    Type = "",
-                    Error = "user not found"
-
-                };
-
-                return UserService.SerialGenerator(loginUserDTO);
-            }
-
             var status = _userService.Login(user.Email, user.Password);
 
             if (status == null)
             {
 
-                loginUserDTO = new LoginUserDTO
-                {
-                    Id = "",
-                    Type = "",
-                    Error = "wrong password"
-
-                };
-
-                return UserService.SerialGenerator(loginUserDTO);
+                return NotFound();
             }
 
             else
             {
-                loginUserDTO = new LoginUserDTO
+                LoginUserDTO loginUserDTO = new LoginUserDTO
                 {
-                    Id = userCheck.Id,
-                    Type = userCheck.Type,
-                    Error = ""
+                    Id = status.Id,
+                    Type = status.Type,
 
                 };
 

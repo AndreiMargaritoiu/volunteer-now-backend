@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using backendapi.Models;
 using backendapi.Services;
 using backendapi.DTO;
+using MongoDB.Bson;
 
 
 namespace backendapi.Controllers
@@ -45,7 +46,6 @@ namespace backendapi.Controllers
             {
                 Id = user.Id,
                 Type = user.Type,
-                Error = ""
 
             };
 
@@ -89,36 +89,96 @@ namespace backendapi.Controllers
                 return NotFound();
             }
           
-            ListsIds.ForEach(objid =>
-            {
-                System.Diagnostics.Debug.WriteLine(
-                    _needService.GetNeed(objid.ToString()).Title
-                    );
-
-                System.Diagnostics.Debug.WriteLine(
-                    _needService.GetNeed(objid.ToString()).Description
-                    );
-            });
+      
             return ListsIds;
         }
 
         [HttpPut("updateUser/{id:length(24)}", Name = "UpdateUser")]
         public ActionResult<User> UpdateUser(string id, [FromBody] User user)
         {
-            
             var UserCheck = _userService.GetUser(id);
 
-            user.Id = id;
-            user.Password = UserCheck.Password;
-            user.Type = UserCheck.Type;
-            user.NeedsIds = UserCheck.NeedsIds;
-                 
             if (UserCheck == null)
             {
                 return NotFound();
             }
 
+            user.Id = id;
+            user.Password = UserCheck.Password;
+            user.Type = UserCheck.Type;
+            user.NeedsIds = UserCheck.NeedsIds;
+         
+
             _userService.UpdateUser(id, user);
+            return NoContent();
+        }
+
+        [HttpPut("assign/{uid:length(24)}/{nid:length(24)}", Name = "AssignUserNeed")]
+        public ActionResult<User> AssignUserNeed(string uid, [FromRouteAttribute] string nid)
+        {
+            var UserCheck = _userService.GetUser(uid);
+            if (UserCheck == null)
+            {
+                return NotFound();
+            }
+            ObjectId nidy = new ObjectId(nid);
+
+            List<Need> ListOfAssigned = new List<Need>();
+            UserCheck.NeedsIds.ForEach(uid =>
+            {
+                var need = _needService.GetNeed(uid.ToString());
+                ListOfAssigned.Add(need);
+            }
+            );
+
+            var NeedGet = _needService.GetNeed(nid);
+            NeedGet.State = Utils.Utils.NEED_STATE_ASSIGNED;
+            if (NeedGet == null)
+            {
+                return NotFound();
+            }
+
+            UserCheck.NeedsIds.Add(nidy);
+            _needService.UpdateNeed(nid, NeedGet);
+            _userService.AssignUserNeed(uid, nidy, UserCheck);
+            return NoContent();
+        }
+
+        [HttpPut("unassign/{uid:length(24)}/{nid:length(24)}", Name = "UnassignUserNeed")]
+        public ActionResult<User> UnassignUserNeed(string uid, [FromRouteAttribute] string nid)
+        {
+            var UserCheck = _userService.GetUser(uid);
+            if (UserCheck == null)
+            {
+                return NotFound();
+            }
+            ObjectId nidy = new ObjectId(nid);
+
+            var NeedGet = _needService.GetNeed(nid);
+            NeedGet.State = Utils.Utils.NEED_STATE_UNASSIGNED;
+            if (NeedGet == null)
+            {
+                return NotFound();
+            }
+
+            UserCheck.NeedsIds.Remove(nidy);
+            _needService.UpdateNeed(nid, NeedGet);
+            _userService.AssignUserNeed(uid, nidy, UserCheck);
+            return NoContent();
+        }
+
+        [HttpPut("done/{uid:length(24)}/{nid:length(24)}", Name = "DoneUserNeed")]
+        public ActionResult<User> DoneUserNeed(string uid, [FromRouteAttribute] string nid)
+        {
+          
+            var NeedGet = _needService.GetNeed(nid);
+            NeedGet.State = Utils.Utils.NEED_STATE_DONE;
+            if (NeedGet == null)
+            {
+                return NotFound();
+            }
+
+            _needService.UpdateNeed(nid, NeedGet);
             return NoContent();
         }
 
@@ -128,47 +188,20 @@ namespace backendapi.Controllers
         public ActionResult<string> Login(User user)
         {
 
-            var userCheck = _userService.GetUserByEmail(user.Email);
-
-            LoginUserDTO loginUserDTO;
-
-            if (userCheck == null)
-            {
-
-                loginUserDTO = new LoginUserDTO
-                {
-                    Id = "",
-                    Type = "",
-                    Error = "user not found"
-
-                };
-
-                return UserService.SerialGenerator(loginUserDTO);
-            }
-
             var status = _userService.Login(user.Email, user.Password);
 
             if (status == null)
             {
 
-                loginUserDTO = new LoginUserDTO
-                {
-                    Id = "",
-                    Type = "",
-                    Error = "wrong password"
-
-                };
-
-                return UserService.SerialGenerator(loginUserDTO);
+                return NotFound();
             }
 
             else
             {
-                loginUserDTO = new LoginUserDTO
+                LoginUserDTO loginUserDTO = new LoginUserDTO
                 {
-                    Id = userCheck.Id,
-                    Type = userCheck.Type,
-                    Error = ""
+                    Id = status.Id,
+                    Type = status.Type,
 
                 };
 

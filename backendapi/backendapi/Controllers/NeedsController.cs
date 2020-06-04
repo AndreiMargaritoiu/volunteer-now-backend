@@ -6,56 +6,104 @@ using Microsoft.AspNetCore.Mvc;
 using backendapi.Models;
 using backendapi.Services;
 using backendapi.DTO;
+using backendapi.Utils;
 using MongoDB.Bson;
 
 namespace backendapi.Controllers
 {
 
+  
     [Route("api/[controller]")]
     [ApiController]
     public class NeedsController : ControllerBase
     {
         private readonly NeedService _needsService;
+        private readonly UserService _userService;
 
-        public NeedsController(NeedService needService)
+        public NeedsController(NeedService needService, UserService userService)
         {
             _needsService = needService;
+            _userService = userService;
         }
 
-        [HttpGet]
-        public ActionResult<List<Need>> Get() => _needsService.Get();
 
+        [HttpGet("get/unassigned/{id:length(24)}")]
+        public ActionResult<List<EditNeedDTO>> Get(string id)
+        {
+
+            List<EditNeedDTO> ListUnassignedDTO = new List<EditNeedDTO>();
+            var user = _userService.GetUser(id);
+
+            if(user == null)
+            {
+                return NotFound();
+            }
+
+            ISet<ObjectId> AssignedNeedsSet = new HashSet<ObjectId>(user.NeedsIds);
+
+            _needsService.Get().ForEach(need =>
+             {
+                 if (!AssignedNeedsSet.Contains(new ObjectId(need.Id)) && need.State == Utils.Utils.NEED_STATE_UNASSIGNED)
+                 {
+                     EditNeedDTO EDT = new EditNeedDTO()
+                     {
+                         Title =  need.Title,
+                         Description = need.Description,
+                         Date = need.Date,
+                         State =  need.State,
+                         City  = user.Address,
+                         Id = need.Id
+                     };
+                     ListUnassignedDTO.Add(EDT);
+                 }
+
+             });
+
+            return ListUnassignedDTO;
+        }
 
 
         [HttpGet("getNeed/{id:length(24)}", Name = "GetNeed")]
         public ActionResult<EditNeedDTO> GetNeed(string id)
         {
             var need = _needsService.GetNeed(id);
-
-            EditNeedDTO needDTO;
             if (need == null)
             {
                 return NotFound();
             }
-            else
-            {
-                needDTO = new EditNeedDTO
-                {
-                    Title = need.Title,
-                    Description = need.Description
-                };
-            }
+            var UserNeed = _userService.GetUser(need.UserId.ToString());
 
+   
+            if (UserNeed == null)
+            {
+                return NotFound();
+            }
+         
+            EditNeedDTO needDTO = new EditNeedDTO
+            {
+                Title = need.Title,
+                Description = need.Description,
+                Date = need.Date,
+                State = need.State,
+                City = UserNeed.Address
+            };
+            
             return needDTO;
         }
 
         [HttpGet("{id:length(24)}", Name = "GetNeeds")]
         public ActionResult<List<Need>> GetNeeds(string id)
         {
+         
             return _needsService.GetNeedsByUser(id);
         }
 
+        [HttpGet("getDone/{id:length(24)}", Name = "GetDoneNeeds")]
+        public ActionResult<List<Need>> GetDoneNeeds(string id)
+        {
 
+            return _needsService.GetDoneNeedsByUser(id);
+        }
 
         [HttpPut("{id:length(24)}")]
         public ActionResult<Need> UpdateNeed(string id, [FromBody] Need need)
@@ -66,7 +114,10 @@ namespace backendapi.Controllers
             {
                 return NotFound();
             }
-
+            need.Id = id;
+            need.UserId = NeedCheck.UserId;
+            need.Date = NeedCheck.Date;
+            need.State = NeedCheck.State;
             _needsService.UpdateNeed(id, need);
             return NoContent();
         }
@@ -82,7 +133,8 @@ namespace backendapi.Controllers
                 Title = NeedDTO.Title,
                 Description = NeedDTO.Description,
                 UserId = ObjectId.Parse(id),
-                Date = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss")
+                Date = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss"),
+                State = Utils.Utils.NEED_STATE_UNASSIGNED
             };
 
             _needsService.CreateNeed(NeedCreated);
@@ -102,5 +154,79 @@ namespace backendapi.Controllers
             _needsService.DeleteNeed(id);
             return NoContent();
         }
+
+        [HttpGet("get/assigned/{id:length(24)}", Name = "GetAssignedNeeds")]
+        public ActionResult<List<EditNeedDTO>> GetAssignedNeeds(string id)
+        {
+            var user = _userService.GetUser(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            List<EditNeedDTO> ListOfAssigned = new List<EditNeedDTO>();
+            System.Diagnostics.Debug.WriteLine(user.NeedsIds.Count);
+
+            user.NeedsIds.ForEach(id =>
+            {
+                var need = _needsService.GetNeed(id.ToString());
+                if (need != null && need.State == Utils.Utils.NEED_STATE_ASSIGNED)
+                {
+                    EditNeedDTO NeedDTO = new EditNeedDTO
+                    {
+                        Description = need.Description,
+                        Date = need.Date,
+                        Title = need.Title,
+                        State = need.State,
+                        City = user.Address,
+                        Id = need.Id
+
+                    };
+                    ListOfAssigned.Add(NeedDTO);
+                }
+          
+            }
+            );
+
+            return ListOfAssigned;
+        }
+
+
+        [HttpGet("get/done/{id:length(24)}", Name = "GetDoneVolunteerNeeds")]
+        public ActionResult<List<EditNeedDTO>> GetDoneVolunteerNeeds(string id)
+        {
+            var user = _userService.GetUser(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            List<EditNeedDTO> ListOfDone = new List<EditNeedDTO>();
+            System.Diagnostics.Debug.WriteLine(user.NeedsIds.Count);
+
+            user.NeedsIds.ForEach(id =>
+            {
+                var need = _needsService.GetNeed(id.ToString());
+                if (need != null && need.State == Utils.Utils.NEED_STATE_DONE)
+                {
+                    EditNeedDTO NeedDTO = new EditNeedDTO
+                    {
+                        Description = need.Description,
+                        Date = need.Date,
+                        Title = need.Title,
+                        State = need.State,
+                        City = user.Address,
+                        Id = need.Id
+
+                    };
+                    ListOfDone.Add(NeedDTO);
+                }
+
+            }
+            );
+
+            return ListOfDone;
+        }
+
     }
 }

@@ -53,29 +53,5 @@ namespace backendapi.Controllers
         }
 
 
-
-        [HttpPost]
-        public ActionResult<Donations> Create(Donations donation)
-        {
-            _donationsService.CreateDonation(donation);
-
-            return CreatedAtRoute("GetDonation", new { id = donation.Id.ToString() }, donation);
-        }
-
-        [HttpDelete("{id:length(24)}")]
-        public ActionResult<Donations> DeleteDonation(string id){ 
-
-            var DonationCheck = _donationsService.GetDonation(id);
-            if (DonationCheck == null)
-            {
-                return NotFound();
-            }
-
-            _donationsService.DeleteDonation(id);
-            return NoContent();
-        }
-
-
-
     }
 }

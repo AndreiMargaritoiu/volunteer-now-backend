@@ -27,6 +27,7 @@
           "AutoMapper": "9.0.0",
           "Microsoft.AspNetCore.Cors": "2.2.0",
           "Microsoft.EntityFrameworkCore": "3.1.3",
+          "MongoDB.Bson": "2.10.4",
           "MongoDB.Driver": "2.10.3",
           "Newtonsoft.Json": "12.0.3",
           "Newtonsoft.Json.Bson": "1.0.2",
@@ -596,7 +597,7 @@
           "System.Runtime.InteropServices": "4.3.0"
         }
       },
-      "MongoDB.Bson/2.10.3": {
+      "MongoDB.Bson/2.10.4": {
         "dependencies": {
           "NETStandard.Library": "1.6.1",
           "System.Collections.NonGeneric": "4.0.1",
@@ -607,8 +608,8 @@
         },
         "runtime": {
           "lib/netstandard1.5/MongoDB.Bson.dll": {
-            "assemblyVersion": "2.10.3.0",
-            "fileVersion": "2.10.3.0"
+            "assemblyVersion": "2.10.4.0",
+            "fileVersion": "2.10.4.0"
           }
         },
         "compile": {
@@ -617,7 +618,7 @@
       },
       "MongoDB.Driver/2.10.3": {
         "dependencies": {
-          "MongoDB.Bson": "2.10.3",
+          "MongoDB.Bson": "2.10.4",
           "MongoDB.Driver.Core": "2.10.3",
           "MongoDB.Libmongocrypt": "1.0.0",
           "NETStandard.Library": "1.6.1",
@@ -637,7 +638,7 @@
       "MongoDB.Driver.Core/2.10.3": {
         "dependencies": {
           "DnsClient": "1.3.1",
-          "MongoDB.Bson": "2.10.3",
+          "MongoDB.Bson": "2.10.4",
           "MongoDB.Libmongocrypt": "1.0.0",
           "NETStandard.Library": "1.6.1",
           "SharpCompress": "0.23.0",
@@ -3417,12 +3418,12 @@
       "path": "microsoft.win32.registry/4.0.0",
       "hashPath": "microsoft.win32.registry.4.0.0.nupkg.sha512"
     },
-    "MongoDB.Bson/2.10.3": {
+    "MongoDB.Bson/2.10.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-UT6w7vsiXlCH7mABxj/NuaGR0KWfXIW5zP5RHW16JrviiygSoEb6fEUhs1QgrjdcNHP+gns1/T9Sfqi4KUPPew==",
-      "path": "mongodb.bson/2.10.3",
-      "hashPath": "mongodb.bson.2.10.3.nupkg.sha512"
+      "sha512": "sha512-hLk3nlr2YMe8O5LBi6us9JQTEBT/Kabb92eAxgDIXlENS17FOFOmxbGnB5rvKEK1qOaoYWFfyEnLqTt/6hTlpw==",
+      "path": "mongodb.bson/2.10.4",
+      "hashPath": "mongodb.bson.2.10.4.nupkg.sha512"
     },
     "MongoDB.Driver/2.10.3": {
       "type": "package",

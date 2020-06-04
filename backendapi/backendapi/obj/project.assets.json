@@ -356,7 +356,7 @@
           }
         }
       },
-      "MongoDB.Bson/2.10.3": {
+      "MongoDB.Bson/2.10.4": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1",
@@ -2670,10 +2670,10 @@
         "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Registry.dll"
       ]
     },
-    "MongoDB.Bson/2.10.3": {
-      "sha512": "UT6w7vsiXlCH7mABxj/NuaGR0KWfXIW5zP5RHW16JrviiygSoEb6fEUhs1QgrjdcNHP+gns1/T9Sfqi4KUPPew==",
+    "MongoDB.Bson/2.10.4": {
+      "sha512": "hLk3nlr2YMe8O5LBi6us9JQTEBT/Kabb92eAxgDIXlENS17FOFOmxbGnB5rvKEK1qOaoYWFfyEnLqTt/6hTlpw==",
       "type": "package",
-      "path": "mongodb.bson/2.10.3",
+      "path": "mongodb.bson/2.10.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2682,7 +2682,7 @@
         "lib/net452/MongoDB.Bson.xml",
         "lib/netstandard1.5/MongoDB.Bson.dll",
         "lib/netstandard1.5/MongoDB.Bson.xml",
-        "mongodb.bson.2.10.3.nupkg.sha512",
+        "mongodb.bson.2.10.4.nupkg.sha512",
         "mongodb.bson.nuspec"
       ]
     },
@@ -7147,6 +7147,7 @@
       "AutoMapper >= 9.0.0",
       "Microsoft.AspNetCore.Cors >= 2.2.0",
       "Microsoft.EntityFrameworkCore >= 3.1.3",
+      "MongoDB.Bson >= 2.10.4",
       "MongoDB.Driver >= 2.10.3",
       "Newtonsoft.Json >= 12.0.3",
       "Newtonsoft.Json.Bson >= 1.0.2"
@@ -7204,6 +7205,10 @@
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[3.1.3, )"
+          },
+          "MongoDB.Bson": {
+            "target": "Package",
+            "version": "[2.10.4, )"
           },
           "MongoDB.Driver": {
             "target": "Package",

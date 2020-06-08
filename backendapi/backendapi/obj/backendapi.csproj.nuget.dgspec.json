@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luci\\Desktop\\Faculty\\SemII\\II\\Proiect\\TheRealProject\\TheProject\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj": {}
+    "F:\\faculta\\ANIII\\Valean\\GitHubProj\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luci\\Desktop\\Faculty\\SemII\\II\\Proiect\\TheRealProject\\TheProject\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj": {
+    "F:\\faculta\\ANIII\\Valean\\GitHubProj\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luci\\Desktop\\Faculty\\SemII\\II\\Proiect\\TheRealProject\\TheProject\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj",
+        "projectUniqueName": "F:\\faculta\\ANIII\\Valean\\GitHubProj\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj",
         "projectName": "backendapi",
-        "projectPath": "C:\\Users\\Luci\\Desktop\\Faculty\\SemII\\II\\Proiect\\TheRealProject\\TheProject\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj",
-        "packagesPath": "C:\\Users\\Luci\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luci\\Desktop\\Faculty\\SemII\\II\\Proiect\\TheRealProject\\TheProject\\II_2020_Backend\\backendapi\\backendapi\\obj\\",
+        "projectPath": "F:\\faculta\\ANIII\\Valean\\GitHubProj\\II_2020_Backend\\backendapi\\backendapi\\backendapi.csproj",
+        "packagesPath": "C:\\Users\\mihai\\.nuget\\packages\\",
+        "outputPath": "F:\\faculta\\ANIII\\Valean\\GitHubProj\\II_2020_Backend\\backendapi\\backendapi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Luci\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mihai\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

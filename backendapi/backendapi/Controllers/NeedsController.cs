@@ -43,6 +43,7 @@ namespace backendapi.Controllers
 
             _needsService.Get().ForEach(need =>
              {
+                 var UserNeed = _userService.GetUser(need.UserId.ToString());
                  if (!AssignedNeedsSet.Contains(new ObjectId(need.Id)) && need.State == Utils.Utils.NEED_STATE_UNASSIGNED)
                  {
                      EditNeedDTO EDT = new EditNeedDTO()
@@ -51,7 +52,7 @@ namespace backendapi.Controllers
                          Description = need.Description,
                          Date = need.Date,
                          State =  need.State,
-                         City  = user.Address,
+                         City  = UserNeed.Address,
                          Id = need.Id
                      };
                      ListUnassignedDTO.Add(EDT);

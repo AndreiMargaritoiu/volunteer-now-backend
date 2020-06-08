@@ -132,12 +132,12 @@ namespace backendapi.Controllers
             );
 
             var NeedGet = _needService.GetNeed(nid);
-            NeedGet.State = Utils.Utils.NEED_STATE_ASSIGNED;
             if (NeedGet == null)
             {
                 return NotFound();
             }
-
+            NeedGet.State = Utils.Utils.NEED_STATE_ASSIGNED;
+           
             UserCheck.NeedsIds.Add(nidy);
             _needService.UpdateNeed(nid, NeedGet);
             _userService.AssignUserNeed(uid, nidy, UserCheck);
@@ -155,12 +155,12 @@ namespace backendapi.Controllers
             ObjectId nidy = new ObjectId(nid);
 
             var NeedGet = _needService.GetNeed(nid);
-            NeedGet.State = Utils.Utils.NEED_STATE_UNASSIGNED;
             if (NeedGet == null)
             {
                 return NotFound();
             }
-
+            NeedGet.State = Utils.Utils.NEED_STATE_UNASSIGNED;
+           
             UserCheck.NeedsIds.Remove(nidy);
             _needService.UpdateNeed(nid, NeedGet);
             _userService.AssignUserNeed(uid, nidy, UserCheck);
@@ -172,11 +172,12 @@ namespace backendapi.Controllers
         {
           
             var NeedGet = _needService.GetNeed(nid);
-            NeedGet.State = Utils.Utils.NEED_STATE_DONE;
             if (NeedGet == null)
             {
                 return NotFound();
             }
+            NeedGet.State = Utils.Utils.NEED_STATE_DONE;
+          
 
             _needService.UpdateNeed(nid, NeedGet);
             return NoContent();
